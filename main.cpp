@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 
 
 
@@ -8,50 +9,39 @@ using namespace std;
 
 const int side = 10;
 
-
-
-class Entity
-
-{
-
+class Item{
 public:
-
 
 
 protected:
+    string name;
+    string type;
+    map<string, int> properties;
 
-int Hp;
-
-int Damage;
-
-int Defence;
-
-}
+};
 
 
 
-Entity::Entity()
+class Entity{
+protected:
 
-{
-
-}
-
-
-
-Entity::~Entity()
-
-{
-
-}
-
-
-
-class Plane
-
-{
+    int Hp;
+    char Icon;
+    int Damage;
+    int Defence;
 
 public:
 
+char getIcon(){
+    return Icon;
+}
+
+};
+
+
+class Plane{
+
+public:
 
 
 
@@ -66,24 +56,21 @@ char plane[side][side];
 
 
 
-Plane::Plane()
-
-{
-
-}
-
-
-
-Plane::~Plane()
-
-{
-
-}
 
 
 
 
 
 int main() {
+
+    Plane plane;
+    
+    for ( int i = 0; i < side; i++){
+            for (j = 0; j < )
+        
+    }
+    
+    
+    return 0;
 
 }
