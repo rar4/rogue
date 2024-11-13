@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <map>
 
@@ -9,7 +10,7 @@ using namespace std;
 
 const int side = 10;
 
-class Item{
+class Item {
 public:
 
 
@@ -22,7 +23,7 @@ protected:
 
 
 
-class Entity{
+class Entity {
 protected:
 
     int Hp;
@@ -32,23 +33,33 @@ protected:
 
 public:
 
-char getIcon(){
-    return Icon;
-}
+    char getIcon() {
+        return Icon;
+    }
 
 };
 
 
-class Plane{
+class Plane {
 
 public:
 
+    void get_Plane() {
 
+		for (int i = 0; i < side; i++) {
+			for (int j = 0; j < side; j++) {
+				cout << plane[i, j];
+			}
+        
+            cout << "endl";
+		}
+
+    }
 
 
 protected:
 
-char plane[side][side];
+    char plane[side][side];
 
 
 
@@ -64,13 +75,10 @@ char plane[side][side];
 int main() {
 
     Plane plane;
-    
-    for ( int i = 0; i < side; i++){
-            for (j = 0; j < )
-        
-    }
-    
-    
+
+
+
     return 0;
 
 }
+
