@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <map>
 
@@ -29,12 +28,16 @@ protected:
     int Hp;
     char Icon;
     int Damage;
-    int Defence;
-
+    int Defence; 
+    int position[2];
 public:
 
     char getIcon() {
         return Icon;
+    }
+
+    int[2] getPosition() {
+        return  position;
     }
 
 };
@@ -44,15 +47,15 @@ class Plane {
 
 public:
 
-    void get_Plane() {
+    void printPlane () {
 
-		for (int i = 0; i < side; i++) {
-			for (int j = 0; j < side; j++) {
-				cout << plane[i, j];
-			}
-        
+        for (int i = 0; i < side; i++) {
+            for (int j = 0; j < side; j++) {
+                cout << plane[i, j];
+            }
+
             cout << "endl";
-		}
+        }
 
     }
 
@@ -81,4 +84,3 @@ int main() {
     return 0;
 
 }
-
