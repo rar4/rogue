@@ -1,4 +1,4 @@
- <iostream>
+#include <iostream>
 #include <map>
 
 
@@ -29,15 +29,20 @@ protected:
 	char Icon;
 	int Damage;
 	int Defence;
-	int position[2];
+	int* Position;
 public:
+
+	Entity(int hp, char icon, int damage, int defense, int* position) : Hp{ hp }, Icon{ icon }, Damage{ damage }, Defence{ defense }, Position{ position }
+	{
+
+	}
 
 	char getIcon() {
 		return Icon;
 	}
 
 	int* getPosition() {
-		return  position;
+		return  Position;
 	}
 
 };
@@ -47,35 +52,45 @@ class Plane {
 
 protected:
 
-	char plane[side][side] = { "" };
+	char plane[side][side];
 
 public:
 
 	Plane() {
 		for (int i = 0; i < side; i++) {
 			for (int j = 0; j < side; j++) {
-				if (i == 0 || i == side){
-
-			}
-
-		}{
-
-
-
-
-		void printPlane() {
-
-			for (int i = 0; i < side; i++) {
-				for (int j = 0; j < side; j++) {
-					cout << plane[i, j];
+				if (i == 0 || i == side - 1) {
+					plane[i][j] = '-';
+				}
+				else if (j == 0 || j == side - 1) {
+					plane[i][j] = '|';
+				}
+				else {
+					plane[i][j] = ' ';
 				}
 
-				cout << endl;
 			}
 
+
+		}
+	}
+	void refreshPlane() {
+		
+
+	}
+
+	void printPlane()
+	{
+
+		for (int i = 0; i < side; i++) {
+			for (int j = 0; j < side; j++) {
+				cout << plane[i][j];
+			}
+
+			cout << endl;
 		}
 
-
+	}
 
 
 
@@ -92,6 +107,8 @@ public:
 int main() {
 
 	Plane plane;
+	int position[2] = { side / 2 };
+	Entity hero(10, '#', 1, 0, position);
 
 	plane.printPlane();
 
